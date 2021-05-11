@@ -11,7 +11,7 @@
 </head>
 <body>
 
-    <h1>"Guess The Meme" Quiz! </h1>
+    <h1>Do You Know Your Memes? </h1>
     <h2>Nawshin Rahman, Destiny Stribling, Nuran Ghoneim </h2>
     <h3>ITEC 305 M01 - Internet Programming I</h3>
     <h4>Professor Salayka</h4>
