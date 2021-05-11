@@ -73,6 +73,10 @@
             <input type = "radio" name = "guess" value = "guess3" /> <br />
             <input type = "radio" name = "guess" value = "guess4" /> </label> </li>
     </ol>
+
+    <form action= results.php >
+    <input type = "submit" value="Submit Your Answers"/>
+    </form>
     
 </body>
 </html>
