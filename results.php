@@ -53,7 +53,18 @@
     </ol>
 
     <form action= quiz.php >
-    <input type = "submit" value="Retry?"/>
+    <input type = "submit" value="Retry?" class = "resultsbutton"/>
     </form>
+
+    <p>
+    <a href="http://validator.w3.org/check/referer">
+        <img src="https://www.w3.org/Icons/valid-xhtml11" 
+        alt="W3C HTML1.1" />
+    </a>
+    <a href="http://jigsaw.w3.org/css-validator/check/referer">
+        <img src="http://jigsaw.w3.org/css-validator/images/vcss"
+        alt="W3C CSS" />
+    </a>
+    </p>
 </body>
 </html>

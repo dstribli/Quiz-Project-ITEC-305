@@ -54,3 +54,14 @@ h2{
     color: #ccccff;
     font-size: 15pt;
 }
+
+.resultsbutton{
+    background-color:#ccccff;
+    font-family: Arial, Helvetica, sans-serif;
+    color: gray;
+    font-weight: bold;
+    font-size: 15pt;
+    border-style: double;
+    border-color: #808080;
+    border-width: 5px;
+}

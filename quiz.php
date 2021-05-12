@@ -74,7 +74,7 @@
     </ol>
 
     <form action= results.php >
-    <input type = "submit" value="Submit Your Answers"/>
+    <input type = "submit" value="Submit Your Answers" class = "submitbutton"/>
     </form>
 
     <p>
