@@ -20,59 +20,61 @@
     only one of them is the correct answer. Choose wisely. Have fun!
     </p>
 
-    <ol>
-        <li> Complete the meme: Keep Calm and _____. <br /> <label>
-            <input type = "radio" name = "guess1" value = "guess1" /> <br />
-            <input type = "radio" name = "guess2" value = "guess2" /> <br />
-            <input type = "radio" name = "guess3" value = "guess3" /> <br />
-            <input type = "radio" name = "guess4" value = "guess4" /> </label> </li>
-        <li> Complete the meme: Real question is what________. <br /> <label>
-            <input type = "radio" name = "guess5" value = "guess5" /> <br />
-            <input type = "radio" name = "guess6" value = "guess6" /> <br />
-            <input type = "radio" name = "guess7" value = "guess7" /> <br />
-            <input type = "radio" name = "guess8" value = "guess8" /> </label> </li>
-        <li> Complete the meme: I just came to have a good time________. <br /> <label>
-            <input type = "radio" name = "guess9" value = "guess9" /> <br />
-            <input type = "radio" name = "guess10" value = "guess10" /> <br />
-            <input type = "radio" name = "guess11" value = "guess11" /> <br />
-            <input type = "radio" name = "guess12" value = "guess12" /> </label> </li>
-        <li> Complete the meme: Oh my god, I'm gonna cry! My diamond earring!________. <br /> <label>
-            <input type = "radio" name = "guess13" value = "guess13" /> <br />
-            <input type = "radio" name = "guess14" value = "guess14" /> <br />
-            <input type = "radio" name = "guess15" value = "guess15" /> <br />
-            <input type = "radio" name = "guess16" value = "guess16" /> </label> </li>
-        <li> Complete the meme: Look at________. <br /> <label>
-            <input type = "radio" name = "guess17" value = "guess17" /> <br />
-            <input type = "radio" name = "guess18" value = "guess18" /> <br />
-            <input type = "radio" name = "guess19" value = "guess19" /> <br />
-            <input type = "radio" name = "guess20" value = "guess20" /> </label> </li>
-        <li> Complete the meme: You did it________. <br /> <label>
-            <input type = "radio" name = "guess21" value = "guess21" /> <br />
-            <input type = "radio" name = "guess22" value = "guess22" /> <br />
-            <input type = "radio" name = "guess23" value = "guess23" /> <br />
-            <input type = "radio" name = "guess24" value = "guess24" /> </label> </li>
-        <li> Complete the meme: Oh hi thanks for checking in________. <br /> <label>
-            <input type = "radio" name = "guess25" value = "guess25" /> <br />
-            <input type = "radio" name = "guess26" value = "guess26" /> <br />
-            <input type = "radio" name = "guess27" value = "guess27" /> <br />
-            <input type = "radio" name = "guess28" value = "guess28" /> </label> </li>
-        <li> Complete the meme: Damn Daniel________. <br /> <label>
-            <input type = "radio" name = "guess29" value = "guess29" /> <br />
-            <input type = "radio" name = "guess30" value = "guess30" /> <br />
-            <input type = "radio" name = "guess31" value = "guess31" /> <br />
-            <input type = "radio" name = "guess32" value = "guess32" /> </label> </li>
-        <li> Complete the meme: I don't need friends________. <br /> <label>
-            <input type = "radio" name = "guess33" value = "guess33" /> <br />
-            <input type = "radio" name = "guess34" value = "guess34" /> <br />
-            <input type = "radio" name = "guess35" value = "guess35" /> <br />
-            <input type = "radio" name = "guess36" value = "guess36" /> </label> </li>
-        <li> Complete the meme: He needs________. <br /> <label>
-            <input type = "radio" name = "guess37" value = "guess37" /> <br />
-            <input type = "radio" name = "guess38" value = "guess38" /> <br />
-            <input type = "radio" name = "gues39" value = "guess39" /> <br />
-            <input type = "radio" name = "guess40" value = "guess40" /> </label> </li>
-    </ol>
-
+    <div class="questions">
+        <ol>
+            <li> Complete the meme: Keep Calm AND _____. <img src="keepcalm.png" alt="Keep Calm" class="keepcalm">  <label> <br /> 
+            
+                <input type = "radio" name = "choices" value = "Stay 6 feet away" /> Stay 6 feet away <br />
+                <input type = "radio" name = "choices" value = "Carry on" /> Carry on <br />
+                <input type = "radio" name = "choices" value = "Meme on" /> Meme on<br />
+                <input type = "radio" name = "choices" value = "Breathe deeply" /> Breathe deeply</label> </li> <br />
+            <li> Complete the meme: Real question is what________. <br /> <label>
+                <input type = "radio" name = "choices" value = "Who are you?????" /> Who are you?????<br />
+                <input type = "radio" name = "choices" value = "Where am I?????" /> Where am I????? <br />
+                <input type = "radio" name = "choices" value = "What are those?????" /> What are those?????<br />
+                <input type = "radio" name = "choices" value = "Where are they?????" /> Where are they?????</label> </li> <br />
+            <li> Complete the meme: I just came to have a good time, and ________. <br /> <label>
+                <input type = "radio" name = "choices" value = "Now I'm just depressed" /> Now I'm just depressed<br />
+                <input type = "radio" name = "choices" value = "You guys are ruining everything" /> You guys are ruining everything<br />
+                <input type = "radio" name = "choices" value = "It doesn't seem to be happening anytime soon" /> It doesn't seem to be happening anytime soon <br />
+                <input type = "radio" name = "choices" value = "I'm honestly feeling so attacked right now" /> I'm honestly feeling so attacked right now</label> </li> <br />
+            <li> Complete the meme: Oh my god, I'm gonna cry! My diamond earrings!________. <br /> <label>
+                <input type = "radio" name = "choices" value = "Kim, this is why we have insurance" /> Kim, this is why we have insurance <br />
+                <input type = "radio" name = "choices" value = "Kim, there's people that are dying" /> Kim, there's people that are dying<br />
+                <input type = "radio" name = "choices" value = "Kim, crying about it won't help you find them" /> Kim, crying about it won't help you find them<br />
+                <input type = "radio" name = "choices" value = "Kim, you can just buy new ones" /> Kim, you can just buy new ones</label> </li> <br />
+            <li> Complete the meme: Look at all those ________. <br /> <label>
+                <input type = "radio" name = "choices" value = "Cars" /> Cars<br />
+                <input type = "radio" name = "choices" value = "People" /> People<br />
+                <input type = "radio" name = "choices" value = "Memes" /> Memes<br />
+                <input type = "radio" name = "choices" value = "Chickens" /> Chickens</label> </li> <br />
+            <li> Complete the meme: You did it, _________, you did it. <br /> <label>
+                <input type = "radio" name = "choices" value = "You crazy old man, you did it" /> You crazy old man, you did it <br />
+                <input type = "radio" name = "choices" value = "You crazy son of a bitch, you did it" /> You crazy son of a bitch, you did it <br />
+                <input type = "radio" name = "choices" value = "You beautiful man, you did it" /> You beautiful man, you did it<br />
+                <input type = "radio" name = "choices" value = "You mysterious stranger, you did it" /> You mysterious stranger, you did it</label> </li> <br />
+            <li> Complete the meme: Oh hi thanks for checking in________. <br /> <label>
+                <input type = "radio" name = "choices" value = "I'm still a piece of garbage" /> I'm still a piece of garbage <br />
+                <input type = "radio" name = "choices" value = "I'm doing just fine" /> I'm doing just fine<br />
+                <input type = "radio" name = "choices" value = "I'm slowly dying inside" /> I'm slowly dying inside <br />
+                <input type = "radio" name = "choices" value = "I'm not sure why I'm here" /> I'm not sure why I'm here </label> </li> <br />
+            <li> Complete the meme: But first, ________. <br /> <label>
+                <input type = "radio" name = "choices" value = "Lemme check my phone" /> Lemme check my phone <br />
+                <input type = "radio" name = "choices" value = "Lemme tie my shoes" /> Lemme tie my shoes <br />
+                <input type = "radio" name = "choices" value = "Lemme take our the trash" /> Lemme take our the trash <br />
+                <input type = "radio" name = "choices" value = "Lemme take a selfie" /> Lemme take a selfie </label> </li> <br />
+            <li> Complete the meme: I don't need friends________. <br /> <label>
+                <input type = "radio" name = "choices" value = "I just need my dog" /> I just need my dog<br />
+                <input type = "radio" name = "choices" value = "They dissapoint me" /> They dissapoint me<br />
+                <input type = "radio" name = "choices" value = "Just my PC" /> Just my PC<br />
+                <input type = "radio" name = "choices" value = "That's why I don't have any" /> That's why I don't have any </label> </li> <br />
+            <li> Complete the meme: What's 9 + 10? _______ <br /> <label>
+                <input type = "radio" name = "choices" value = "19" /> 19<br />
+                <input type = "radio" name = "choices" value = "100" /> 100<br />
+                <input type = "radio" name = "choices" value = "21" /> 21<br />
+                <input type = "radio" name = "choices" value = "I never learned how to read" /> I never learned how to read </label> </li>
+        </ol>
+    </div>
     <form action= results.php >
     <input type = "submit" value="Submit Your Answers" class = "submitbutton"/>
     </form>
