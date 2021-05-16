@@ -1,4 +1,44 @@
 <?php
+//session_start();
+//$score = $_SESSION['score'];
+$db = new PDO ("mysql:dbname=quiz;host=localhost:3307", "root", "HatsuneMiku90");
+
+function read_words($db){
+        
+    $parts_of_speech = array("content");
+    shuffle($parts_of_speech); #switching the words inside the array
+    $answer_part = array_pop($parts_of_speech);
+    
+    $lines = file($db);
+    $choices = array(); #hold array of 5 randomly chosen words
+    shuffle($lines); #shuffle our file array so we get randomized choices
+    while(count($choices)<5){
+        #Pop reads me the last one
+        $line = array_pop($lines); #grab the last line in the array
+        list("id", "content", "is_correct") = explode("\t", $line); #this gives me an array with 3 indexes = -, 1, 2
+        #what list does is that the token extracts into three different variables which separate them into 3 different array indexes
+        #list($word, $part, $defn) = $tokens;
+        #destructionary = have a structure and breaks into three arrays
+
+        if($part== $answer_part){
+            $choices[] = $line; #choosing a word that has all adjectives, verb, or noun. Not a word where the options are mix of speech
+        }
+    }
+    return $choices;
+
+}
+
+function get_definition($answer, $db){
+    $lines = file($db);
+    foreach($lines as $line)
+    {
+        list("id", "content", "is_correct") = explode("\t", trim($line));   
+        if($answer == $word)  
+            return $defn;   
+    }
+    return null;
+}
+
 
 
 ?>
@@ -17,6 +57,32 @@
     <h2>Nawshin Rahman, Destiny Stribling, Nuran Ghoneim </h2>
 
     <hr />
+
+    <?php
+
+$choices = read_words($db);
+$correct = 0;
+$total = 0;
+if(isset($_POST["guess"]))
+{
+    $answer = $_POST["content"];
+    $guess = $_POST["guess"];
+    $correct = $_POST["results"];
+    $total = $_POST["total"];
+    $total++;
+    // $defn = get_definition($answer, $filename);
+    
+
+    if($guess == trim(get_definition($answer,$db))){
+        echo '<p style="color:#1EF23D";>Correct</p>';
+        $correct++;
+    } else{
+        echo get_definition($answer, $db) . '<p style="color:#FF0000";>Incorrect</p>';
+    }
+    
+}
+  
+    ?>
     <p> Score: </p>
     
     <ol>

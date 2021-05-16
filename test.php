@@ -1,9 +1,26 @@
 <?php 
 
-$db = new PDO ("mysql:dbname=quiz;host=localhost:3307", "root", "root");
-$rows = $db->query("SELECT * FROM quiz_questions");
+$db = new PDO ("mysql:dbname=quiz;host=localhost:3307", "root", "HatsuneMiku90");
+$rows = $db->query("SELECT * FROM quiz.quiz_questions WHERE id = 135791;");
+$rows2 = $db->query("SELECT * FROM quiz.quiz_questions WHERE id = 135792;");
+$rows3 = $db->query("SELECT * FROM quiz.quiz_questions WHERE id = 135793;");
+$rows4 = $db->query("SELECT * FROM quiz.quiz_questions WHERE id = 135794;");
+$rows5 = $db->query("SELECT * FROM quiz.quiz_questions WHERE id = 135795;");
+$rows6 = $db->query("SELECT * FROM quiz.quiz_questions WHERE id = 135796;");
+$rows7 = $db->query("SELECT * FROM quiz.quiz_questions WHERE id = 135797;");
+$rows8 = $db->query("SELECT * FROM quiz.quiz_questions WHERE id = 135798;");
+$rows9 = $db->query("SELECT * FROM quiz.quiz_questions WHERE id = 135799;");
+$rows10 = $db->query("SELECT * FROM quiz.quiz_questions WHERE id = 1357910;");
 $question1 =$db->query("SELECT content FROM quiz_answers WHERE question_id = '135791'");
 $question2 = $db->query("SELECT content FROM quiz_answers WHERE question_id = '135792'");
+$question3 = $db->query("SELECT content FROM quiz_answers WHERE question_id = '135793'");
+$question4 = $db->query("SELECT content FROM quiz_answers WHERE question_id = '135794'");
+$question5 = $db->query("SELECT content FROM quiz_answers WHERE question_id = '135795'");
+$question6 = $db->query("SELECT content FROM quiz_answers WHERE question_id = '135796'");
+$question7 = $db->query("SELECT content FROM quiz_answers WHERE question_id = '135797'");
+$question8 = $db->query("SELECT content FROM quiz_answers WHERE question_id = '135798'");
+$question9 = $db->query("SELECT content FROM quiz_answers WHERE question_id = '135799'");
+$question10 = $db->query("SELECT content FROM quiz_answers WHERE question_id = '1357910'");
 //$answers = $_GET["quiz_answers"];
 //$query2 = "SELECT content FROM quiz_answers ";
 //$result = PDO($db, $query2);
@@ -43,16 +60,107 @@ $question2 = $db->query("SELECT content FROM quiz_answers WHERE question_id = '1
                  <?php
             foreach($question1 as $q1){
                 ?>
-                <input type = "radio" name = "choices"/> <?=$q1["content"]?> <br/>
+                <input type = "radio" name = "q1"/> <?=$q1["content"]?> <br/>
                 <?php
             }
+        }
+        foreach($rows2 as $row2){
+            ?>
+                <li> <?=$row2["content"]?>  </li>      
+                 <?php
+        }
             foreach($question2 as $q2){
                 ?>
-                <input type = "radio" name = "choices"/> <?=$q2["content"]?> <br/>
+                <input type = "radio" name = "q2"/> <?=$q2["content"]?> <br/>
                 <?php
             }
 
-        }
+            foreach($rows3 as $row3){
+                ?>
+                    <li> <?=$row3["content"]?>  </li>      
+                     <?php
+            }
+                foreach($question3 as $q3){
+                    ?>
+                    <input type = "radio" name = "q3"/> <?=$q3["content"]?> <br/>
+                    <?php
+                }
+                foreach($rows4 as $row4){
+                    ?>
+                        <li> <?=$row4["content"]?>  </li>      
+                         <?php
+                }
+                    foreach($question4 as $q4){
+                        ?>
+                        <input type = "radio" name = "q4"/> <?=$q4["content"]?> <br/>
+                        <?php
+                    }
+                    foreach($rows5 as $row5){
+                        ?>
+                            <li> <?=$row5["content"]?>  </li>      
+                             <?php
+                    }
+                        foreach($question5 as $q5){
+                            ?>
+                            <input type = "radio" name = "q5"/> <?=$q5["content"]?> <br/>
+                            <?php
+                        }
+                        foreach($rows6 as $row6){
+                            ?>
+                                <li> <?=$row6["content"]?>  </li>      
+                                 <?php
+                        }
+                            foreach($question6 as $q6){
+                                ?>
+                                <input type = "radio" name = "q6"/> <?=$q6["content"]?> <br/>
+                                <?php
+                            }
+                            foreach($rows7 as $row7){
+                                ?>
+                                    <li> <?=$row7["content"]?>  </li>      
+                                     <?php
+                            }
+                                foreach($question7 as $q7){
+                                    ?>
+                                    <input type = "radio" name = "q7"/> <?=$q7["content"]?> <br/>
+                                    <?php
+                                }
+                                foreach($rows8 as $row8){
+                                    ?>
+                                        <li> <?=$row8["content"]?>  </li>      
+                                         <?php
+                                }
+                                    foreach($question8 as $q8){
+                                        ?>
+                                        <input type = "radio" name = "q8"/> <?=$q8["content"]?> <br/>
+                                        <?php
+                                    }
+                                    foreach($rows9 as $row9){
+                                        ?>
+                                            <li> <?=$row9["content"]?>  </li>      
+                                             <?php
+                                    }
+                                        foreach($question9 as $q9){
+                                            ?>
+                                            <input type = "radio" name = "q9"/> <?=$q9["content"]?> <br/>
+                                            <?php
+                                        }
+                                        foreach($rows10 as $row10){
+                                            ?>
+                                                <li> <?=$row10["content"]?>  </li>      
+                                                 <?php
+                                        }
+                                            foreach($question10 as $q10){
+                                                ?>
+                                                <input type = "radio" name = "q10"/> <?=$q10["content"]?> <br/>
+                                                <?php
+                                            }
+                       
+                            
+                
+            
+        
+        
         ?>
 
         </ol>
