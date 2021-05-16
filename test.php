@@ -1,14 +1,15 @@
-<?php
+<?php 
 
-$db = new PDO ("mysql:dbname=quiz;host=localhost:3307", "root", "HatsuneMiku90");
+$db = new PDO ("mysql:dbname=quiz;host=localhost:3307", "root", "root");
 $rows = $db->query("SELECT * FROM quiz_questions");
-//$ans =$db->query("SELECT content FROM quiz_answers WHERE question_id = '135792'; ");
-$answers = $_GET["quiz_answers"];
-$query2 = "SELECT content FROM quiz_answers ";
+$question1 =$db->query("SELECT content FROM quiz_answers WHERE question_id = '135791'");
+$question2 = $db->query("SELECT content FROM quiz_answers WHERE question_id = '135792'");
+//$answers = $_GET["quiz_answers"];
+//$query2 = "SELECT content FROM quiz_answers ";
 //$result = PDO($db, $query2);
 //$quiz_answers = PDO_fetch_all ($result);
 //print_r($quiz_answers);
-$ans =$db->query($query2);
+//$ans =$db->query($query2);
 
 
 //var_dump($rows);
@@ -36,19 +37,26 @@ $ans =$db->query($query2);
     <div class="questions">
         <ol>
         <?php
-            foreach($rows as $row)
-            {
+        foreach($rows as $row){
+            ?>
+                <li> <?=$row["content"]?>  </li>      
+                 <?php
+            foreach($question1 as $q1){
                 ?>
-                <li> <?=$row["content"]?>   <label> <br /> 
-            
-            <input type = "radio" name = "choices" value = "Stay 6 feet away" /> <?=$row["content"]?>    <br />
-           <input type = "radio" name = "choices" value = "Carry on" />  <br />
-            <input type = "radio" name = "choices" value = "Meme on" /> <br />
-            <?php
-            } 
+                <input type = "radio" name = "choices"/> <?=$q1["content"]?> <br/>
+                <?php
+            }
+            foreach($question2 as $q2){
+                ?>
+                <input type = "radio" name = "choices"/> <?=$q2["content"]?> <br/>
+                <?php
+            }
+
+        }
         ?>
-          
+
         </ol>
+        
     </div>
     <form action= results.php >
     <input type = "submit" value="Submit Your Answers" class = "submitbutton"/>
@@ -75,4 +83,3 @@ $ans =$db->query($query2);
 ?>
 </body>
 </html>
-
