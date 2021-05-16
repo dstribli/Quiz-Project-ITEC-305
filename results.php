@@ -1,45 +1,7 @@
 <?php
-//session_start();
-//$score = $_SESSION['score'];
-$db = new PDO ("mysql:dbname=quiz;host=localhost:3307", "root", "HatsuneMiku90");
+$db = new PDO ("mysql:dbname=quiz;host=localhost:3307", "root", "root");
 
-function read_words($db){
-        
-    $parts_of_speech = array("content");
-    shuffle($parts_of_speech); #switching the words inside the array
-    $answer_part = array_pop($parts_of_speech);
-    
-    $lines = file($db);
-    $choices = array(); #hold array of 5 randomly chosen words
-    shuffle($lines); #shuffle our file array so we get randomized choices
-    while(count($choices)<5){
-        #Pop reads me the last one
-        $line = array_pop($lines); #grab the last line in the array
-        list("id", "content", "is_correct") = explode("\t", $line); #this gives me an array with 3 indexes = -, 1, 2
-        #what list does is that the token extracts into three different variables which separate them into 3 different array indexes
-        #list($word, $part, $defn) = $tokens;
-        #destructionary = have a structure and breaks into three arrays
-
-        if($part== $answer_part){
-            $choices[] = $line; #choosing a word that has all adjectives, verb, or noun. Not a word where the options are mix of speech
-        }
-    }
-    return $choices;
-
-}
-
-function get_definition($answer, $db){
-    $lines = file($db);
-    foreach($lines as $line)
-    {
-        list("id", "content", "is_correct") = explode("\t", trim($line));   
-        if($answer == $word)  
-            return $defn;   
-    }
-    return null;
-}
-
-
+    $answer = $db->query("SELECT * FROM quiz_answers WHERE is_correct = '1'");
 
 ?>
 
@@ -59,30 +21,178 @@ function get_definition($answer, $db){
     <hr />
 
     <?php
-
-$choices = read_words($db);
-$correct = 0;
-$total = 0;
-if(isset($_POST["guess"]))
-{
-    $answer = $_POST["content"];
-    $guess = $_POST["guess"];
-    $correct = $_POST["results"];
-    $total = $_POST["total"];
-    $total++;
-    // $defn = get_definition($answer, $filename);
-    
-
-    if($guess == trim(get_definition($answer,$db))){
-        echo '<p style="color:#1EF23D";>Correct</p>';
-        $correct++;
-    } else{
-        echo get_definition($answer, $db) . '<p style="color:#FF0000";>Incorrect</p>';
-    }
-    
-}
-  
+        if(isset($_POST['q1'])){
+            $q1 = $_POST['q1'];
+        }
+        else{
+            $q1 = NULL;
+        }
+        if($q1 != NULL){
+            if ($q1 != $answer){
+                echo '$q1 is incorrect';  
+            }
+            else{
+                echo '$q1 is correct';
+            }
+        }
+        else{
+            echo 'you must select an answer';
+        }
+        /*if(isset($_POST['q2'])){
+            $q2 = $_POST['q2'];
+        }
+        else{
+            $q2 = NULL;
+        }
+        if($q2 != NULL){
+            if ($q2 != $answer){
+                echo '$q2 is incorrect';  
+            }
+            else{
+                echo '$q2 is correct';
+            }
+        }
+        else{
+            echo 'you must select an answer';
+        }
+        if(isset($_POST['q3'])){
+            $q3 = $_POST['q3'];
+        }
+        else{
+            $q3 = NULL;
+        }
+        if($q3 != NULL){
+            if ($q3 != $answer){
+                echo '$q3 is incorrect';  
+            }
+            else{
+                echo '$q3 is correct';
+            }
+        }
+        else{
+            echo 'you must select an answer';
+        }
+        if(isset($_POST['q4'])){
+            $q4 = $_POST['q4'];
+        }
+        else{
+            $q4 = NULL;
+        }
+        if($q4 != NULL){
+            if ($q4 != $answer){
+                echo '$q4 is incorrect';  
+            }
+            else{
+                echo '$q4 is correct';
+            }
+        }
+        else{
+            echo 'you must select an answer';
+        }
+        if(isset($_POST['q5'])){
+            $q5 = $_POST['q5'];
+        }
+        else{
+            $q5 = NULL;
+        }
+        if($q5 != NULL){
+            if ($q5 != $answer){
+                echo '$q5 is incorrect';  
+            }
+            else{
+                echo '$q5 is correct';
+            }
+        }
+        else{
+            echo 'you must select an answer';
+        }
+        if(isset($_POST['q6'])){
+            $q6 = $_POST['q6'];
+        }
+        else{
+            $q6 = NULL;
+        }
+        if($q6 != NULL){
+            if ($q6 != $answer){
+                echo '$q6 is incorrect';  
+            }
+            else{
+                echo '$q6 is correct';
+            }
+        }
+        else{
+            echo 'you must select an answer';
+        }
+        if(isset($_POST['q7'])){
+            $q7 = $_POST['q7'];
+        }
+        else{
+            $q7 = NULL;
+        }
+        if($q7 != NULL){
+            if ($q7 != $answer){
+                echo '$q7 is incorrect';  
+            }
+            else{
+                echo '$q7 is correct';
+            }
+        }
+        else{
+            echo 'you must select an answer';
+        }
+        if(isset($_POST['q8'])){
+            $q8 = $_POST['q8'];
+        }
+        else{
+            $q8 = NULL;
+        }
+        if($q8 != NULL){
+            if ($q8 != $answer){
+                echo '$q8 is incorrect';  
+            }
+            else{
+                echo '$q8 is correct';
+            }
+        }
+        else{
+            echo 'you must select an answer';
+        }
+        if(isset($_POST['q9'])){
+            $q9 = $_POST['q9'];
+        }
+        else{
+            $q9 = NULL;
+        }
+        if($q9 != NULL){
+            if ($q9 != $answer){
+                echo '$q9 is incorrect';  
+            }
+            else{
+                echo '$q9 is correct';
+            }
+        }
+        else{
+            echo 'you must select an answer';
+        }
+        if(isset($_POST['q10'])){
+            $q10 = $_POST['q10'];
+        }
+        else{
+            $q10 = NULL;
+        }
+        if($q10 != NULL){
+            if ($q10 != $answer){
+                echo '$q10 is incorrect';  
+            }
+            else{
+                echo '$q10 is correct';
+            }
+        }
+        else{
+            echo 'you must select an answer';
+        } */
     ?>
+
     <p> Score: </p>
     
     <ol>
@@ -117,6 +227,8 @@ if(isset($_POST["guess"]))
         <p> </p>
         </li>
     </ol>
+    
+    
 
     <form action= quiz.php >
     <input type = "submit" value="Retry?" class = "resultsbutton"/>
