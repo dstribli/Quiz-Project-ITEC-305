@@ -1,9 +1,3 @@
-<?php
-$db = new PDO ("mysql:dbname=quiz;host=localhost:3307", "root", "root");
-
-    $answer = $db->query("SELECT * FROM quiz_answers WHERE is_correct = '1'");
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,30 +8,13 @@ $db = new PDO ("mysql:dbname=quiz;host=localhost:3307", "root", "root");
 <body>
 
     <h1>Do You Know Your Memes </h1>
-    <img src="https://media.tenor.com/images/d55a83e9abb508b54415a8672e0da24c/tenor.gif" alt="Head Bopping Cat" class="headericon">
-    <img src="https://media.tenor.com/images/d55a83e9abb508b54415a8672e0da24c/tenor.gif" alt="Head Bopping Cat" class="headericon2">
+   <!-- <img src="https://media.tenor.com/images/d55a83e9abb508b54415a8672e0da24c/tenor.gif" alt="Head Bopping Cat" class="headericon">
+    <img src="https://media.tenor.com/images/d55a83e9abb508b54415a8672e0da24c/tenor.gif" alt="Head Bopping Cat" class="headericon2"> -->
     <h2>Nawshin Rahman, Destiny Stribling, Nuran Ghoneim </h2>
 
     <hr />
 
     <?php
-        if(isset($_POST['q1'])){
-            $q1 = $_POST['q1'];
-        }
-        else{
-            $q1 = NULL;
-        }
-        if($q1 != NULL){
-            if ($q1 != $answer){
-                echo '$q1 is incorrect';  
-            }
-            else{
-                echo '$q1 is correct';
-            }
-        }
-        else{
-            echo 'you must select an answer';
-        }
         /*if(isset($_POST['q2'])){
             $q2 = $_POST['q2'];
         }
@@ -197,6 +174,16 @@ $db = new PDO ("mysql:dbname=quiz;host=localhost:3307", "root", "root");
     
     <ol>
         <li> Your Answer: 
+                <?php
+                    $answer1 = $_POST['q1-answers'];
+                    echo "<p>$answer1</p>";
+
+                    $totalCorrect = 0;
+
+                    if($answer1 == "A"){
+                        $totalCorrect++;
+                    }
+                ?>
         <p> </p>
         </li>
         <li> Your Answer: 
@@ -227,10 +214,11 @@ $db = new PDO ("mysql:dbname=quiz;host=localhost:3307", "root", "root");
         <p> </p>
         </li>
     </ol>
-    
-    
+        <?php
+        echo "<div id='results'>$totalCorrect / 10 correct </p>";
+        ?>
 
-    <form action= quiz.php >
+    <form action= test.php >
     <input type = "submit" value="Retry?" class = "resultsbutton"/>
     </form>
 

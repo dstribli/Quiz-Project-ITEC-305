@@ -1,6 +1,6 @@
 <?php 
 
-$db = new PDO ("mysql:dbname=quiz;host=localhost:3307", "root", "HatsuneMiku90");
+$db = new PDO ("mysql:dbname=quiz;host=localhost:3307", "root", "root");
 $rows = $db->query("SELECT * FROM quiz.quiz_questions WHERE id = 135791;");
 $rows2 = $db->query("SELECT * FROM quiz.quiz_questions WHERE id = 135792;");
 $rows3 = $db->query("SELECT * FROM quiz.quiz_questions WHERE id = 135793;");
@@ -11,7 +11,12 @@ $rows7 = $db->query("SELECT * FROM quiz.quiz_questions WHERE id = 135797;");
 $rows8 = $db->query("SELECT * FROM quiz.quiz_questions WHERE id = 135798;");
 $rows9 = $db->query("SELECT * FROM quiz.quiz_questions WHERE id = 135799;");
 $rows10 = $db->query("SELECT * FROM quiz.quiz_questions WHERE id = 1357910;");
-$question1 =$db->query("SELECT content FROM quiz_answers WHERE question_id = '135791'");
+
+$question1opt1 = $db->query("SELECT content FROM quiz_answers WHERE id = 246801"); 
+$question1opt2 = $db->query("SELECT content FROM quiz_answers WHERE id = 246802"); 
+$question1opt3 = $db->query("SELECT content FROM quiz_answers WHERE id = 246803"); 
+$question1opt4 = $db->query("SELECT content FROM quiz_answers WHERE id = 246804"); 
+$question1 = $db->query("SELECT content FROM quiz_answers WHERE question_id = '135791'"); 
 $question2 = $db->query("SELECT content FROM quiz_answers WHERE question_id = '135792'");
 $question3 = $db->query("SELECT content FROM quiz_answers WHERE question_id = '135793'");
 $question4 = $db->query("SELECT content FROM quiz_answers WHERE question_id = '135794'");
@@ -41,8 +46,8 @@ $question10 = $db->query("SELECT content FROM quiz_answers WHERE question_id = '
 <body>
 
     <h1>Do You Know Your Memes? </h1>
-    <img src="https://media.tenor.com/images/d55a83e9abb508b54415a8672e0da24c/tenor.gif" alt="Head Bopping Cat" class="headericon">
-    <img src="https://media.tenor.com/images/d55a83e9abb508b54415a8672e0da24c/tenor.gif" alt="Head Bopping Cat" class="headericon2">
+   <!-- <img src="https://media.tenor.com/images/d55a83e9abb508b54415a8672e0da24c/tenor.gif" alt="Head Bopping Cat" class="headericon">
+    <img src="https://media.tenor.com/images/d55a83e9abb508b54415a8672e0da24c/tenor.gif" alt="Head Bopping Cat" class="headericon2"> -->
     <h2>By: Nawshin Rahman, Destiny Stribling, Nuran Ghoneim </h2>
 
     <hr />
@@ -50,124 +55,54 @@ $question10 = $db->query("SELECT content FROM quiz_answers WHERE question_id = '
     only one of them is the correct answer. Choose wisely. Have fun!
     </p>
 
+    
+    <form action="results.php" method="post" id="quiz">
 
     <div class="questions">
         <ol>
         <?php
         foreach($rows as $row){
             ?>
-                <li> <?=$row["content"]?>  </li>      
-                 <?php
-            foreach($question1 as $q1){
+                <li> <?=$row["content"]?>  </li>   
+                <?php 
+                foreach($question1opt1 as $opt1){
                 ?>
-                <input type = "radio" name = "q1"/> <?=$q1["content"]?> <br/>
-                <?php
-            }
-        }
-        foreach($rows2 as $row2){
-            ?>
-                <li> <?=$row2["content"]?>  </li>      
-                 <?php
-        }
-            foreach($question2 as $q2){
-                ?>
-                <input type = "radio" name = "q2"/> <?=$q2["content"]?> <br/>
-                <?php
-            }
-
-            foreach($rows3 as $row3){
-                ?>
-                    <li> <?=$row3["content"]?>  </li>      
-                     <?php
-            }
-                foreach($question3 as $q3){
-                    ?>
-                    <input type = "radio" name = "q3"/> <?=$q3["content"]?> <br/>
-                    <?php
+                <div>
+                     <input type = "radio" name = "q1-answers" id="q1-answers-A" value="A"/>
+                     <label for="q1-answers-A"><?=$opt1["content"]?></label> 
+                </div>        
+            <?php
                 }
-                foreach($rows4 as $row4){
+                foreach($question1opt2 as $opt2){
                     ?>
-                        <li> <?=$row4["content"]?>  </li>      
-                         <?php
-                }
-                    foreach($question4 as $q4){
-                        ?>
-                        <input type = "radio" name = "q4"/> <?=$q4["content"]?> <br/>
-                        <?php
-                    }
-                    foreach($rows5 as $row5){
-                        ?>
-                            <li> <?=$row5["content"]?>  </li>      
-                             <?php
-                    }
-                        foreach($question5 as $q5){
-                            ?>
-                            <input type = "radio" name = "q5"/> <?=$q5["content"]?> <br/>
-                            <?php
-                        }
-                        foreach($rows6 as $row6){
-                            ?>
-                                <li> <?=$row6["content"]?>  </li>      
-                                 <?php
-                        }
-                            foreach($question6 as $q6){
-                                ?>
-                                <input type = "radio" name = "q6"/> <?=$q6["content"]?> <br/>
-                                <?php
-                            }
-                            foreach($rows7 as $row7){
-                                ?>
-                                    <li> <?=$row7["content"]?>  </li>      
-                                     <?php
-                            }
-                                foreach($question7 as $q7){
-                                    ?>
-                                    <input type = "radio" name = "q7"/> <?=$q7["content"]?> <br/>
-                                    <?php
-                                }
-                                foreach($rows8 as $row8){
-                                    ?>
-                                        <li> <?=$row8["content"]?>  </li>      
-                                         <?php
-                                }
-                                    foreach($question8 as $q8){
-                                        ?>
-                                        <input type = "radio" name = "q8"/> <?=$q8["content"]?> <br/>
-                                        <?php
-                                    }
-                                    foreach($rows9 as $row9){
-                                        ?>
-                                            <li> <?=$row9["content"]?>  </li>      
-                                             <?php
-                                    }
-                                        foreach($question9 as $q9){
-                                            ?>
-                                            <input type = "radio" name = "q9"/> <?=$q9["content"]?> <br/>
-                                            <?php
-                                        }
-                                        foreach($rows10 as $row10){
-                                            ?>
-                                                <li> <?=$row10["content"]?>  </li>      
-                                                 <?php
-                                        }
-                                            foreach($question10 as $q10){
-                                                ?>
-                                                <input type = "radio" name = "q10"/> <?=$q10["content"]?> <br/>
-                                                <?php
-                                            }
-                       
-                            
-                
-            
-        
-        
+                    <div>
+                        <input type = "radio" name = "q1-answers" id="q1-answers-B" value="B"/>
+                        <label for="q1-answers-B"><?=$opt2["content"]?></label> 
+                    </div>   
+                 <?php
+             }
+             foreach($question1opt3 as $opt3){
+                ?>
+                <div>
+                    <input type = "radio" name = "q1-answers" id="q1-answers-C" value="C"/>
+                    <label for="q1-answers-C"><?=$opt3["content"]?></label> 
+                </div>   
+             <?php
+             }
+             foreach($question1opt4 as $opt4){
+                ?>
+                <div>
+                    <input type = "radio" name = "q1-answers" id="q1-answers-D" value="D"/>
+                    <label for="q1-answers-D"><?=$opt2["content"]?></label> 
+                </div>   
+             <?php
+            }
+          }
         ?>
-
         </ol>
         
     </div>
-    <form action= results.php >
-    <input type = "submit" value="Submit Your Answers" class = "submitbutton"/>
+    <input type = "submit" name = "submit" value="Submit Your Answers" class = "submitbutton"/>
     </form>
 
     <p>
@@ -180,13 +115,13 @@ $question10 = $db->query("SELECT content FROM quiz_answers WHERE question_id = '
         alt="W3C CSS" />
     </a>
     </p>
-
+        </form>
     
 </body>
 </html>
 
 <?php
-    var_dump($rows);
+    //var_dump($rows);
 
 ?>
 </body>
