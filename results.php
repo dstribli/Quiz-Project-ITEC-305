@@ -1,3 +1,9 @@
+<?php
+$db = new PDO ("mysql:dbname=quiz;host=localhost:3307", "root", "root");
+
+    $answer = $db->query("SELECT * FROM quiz_answers WHERE is_correct = '1'");
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,167 +14,11 @@
 <body>
 
     <h1>Do You Know Your Memes </h1>
-   <!-- <img src="https://media.tenor.com/images/d55a83e9abb508b54415a8672e0da24c/tenor.gif" alt="Head Bopping Cat" class="headericon">
-    <img src="https://media.tenor.com/images/d55a83e9abb508b54415a8672e0da24c/tenor.gif" alt="Head Bopping Cat" class="headericon2"> -->
+    <img src="https://media.tenor.com/images/d55a83e9abb508b54415a8672e0da24c/tenor.gif" alt="Head Bopping Cat" class="headericon">
+    <img src="https://media.tenor.com/images/d55a83e9abb508b54415a8672e0da24c/tenor.gif" alt="Head Bopping Cat" class="headericon2"> 
     <h2>Nawshin Rahman, Destiny Stribling, Nuran Ghoneim </h2>
 
     <hr />
-
-    <?php
-        /*if(isset($_POST['q2'])){
-            $q2 = $_POST['q2'];
-        }
-        else{
-            $q2 = NULL;
-        }
-        if($q2 != NULL){
-            if ($q2 != $answer){
-                echo '$q2 is incorrect';  
-            }
-            else{
-                echo '$q2 is correct';
-            }
-        }
-        else{
-            echo 'you must select an answer';
-        }
-        if(isset($_POST['q3'])){
-            $q3 = $_POST['q3'];
-        }
-        else{
-            $q3 = NULL;
-        }
-        if($q3 != NULL){
-            if ($q3 != $answer){
-                echo '$q3 is incorrect';  
-            }
-            else{
-                echo '$q3 is correct';
-            }
-        }
-        else{
-            echo 'you must select an answer';
-        }
-        if(isset($_POST['q4'])){
-            $q4 = $_POST['q4'];
-        }
-        else{
-            $q4 = NULL;
-        }
-        if($q4 != NULL){
-            if ($q4 != $answer){
-                echo '$q4 is incorrect';  
-            }
-            else{
-                echo '$q4 is correct';
-            }
-        }
-        else{
-            echo 'you must select an answer';
-        }
-        if(isset($_POST['q5'])){
-            $q5 = $_POST['q5'];
-        }
-        else{
-            $q5 = NULL;
-        }
-        if($q5 != NULL){
-            if ($q5 != $answer){
-                echo '$q5 is incorrect';  
-            }
-            else{
-                echo '$q5 is correct';
-            }
-        }
-        else{
-            echo 'you must select an answer';
-        }
-        if(isset($_POST['q6'])){
-            $q6 = $_POST['q6'];
-        }
-        else{
-            $q6 = NULL;
-        }
-        if($q6 != NULL){
-            if ($q6 != $answer){
-                echo '$q6 is incorrect';  
-            }
-            else{
-                echo '$q6 is correct';
-            }
-        }
-        else{
-            echo 'you must select an answer';
-        }
-        if(isset($_POST['q7'])){
-            $q7 = $_POST['q7'];
-        }
-        else{
-            $q7 = NULL;
-        }
-        if($q7 != NULL){
-            if ($q7 != $answer){
-                echo '$q7 is incorrect';  
-            }
-            else{
-                echo '$q7 is correct';
-            }
-        }
-        else{
-            echo 'you must select an answer';
-        }
-        if(isset($_POST['q8'])){
-            $q8 = $_POST['q8'];
-        }
-        else{
-            $q8 = NULL;
-        }
-        if($q8 != NULL){
-            if ($q8 != $answer){
-                echo '$q8 is incorrect';  
-            }
-            else{
-                echo '$q8 is correct';
-            }
-        }
-        else{
-            echo 'you must select an answer';
-        }
-        if(isset($_POST['q9'])){
-            $q9 = $_POST['q9'];
-        }
-        else{
-            $q9 = NULL;
-        }
-        if($q9 != NULL){
-            if ($q9 != $answer){
-                echo '$q9 is incorrect';  
-            }
-            else{
-                echo '$q9 is correct';
-            }
-        }
-        else{
-            echo 'you must select an answer';
-        }
-        if(isset($_POST['q10'])){
-            $q10 = $_POST['q10'];
-        }
-        else{
-            $q10 = NULL;
-        }
-        if($q10 != NULL){
-            if ($q10 != $answer){
-                echo '$q10 is incorrect';  
-            }
-            else{
-                echo '$q10 is correct';
-            }
-        }
-        else{
-            echo 'you must select an answer';
-        } */
-    ?>
 
     <p> Score: </p>
     
@@ -180,37 +30,109 @@
 
                     $totalCorrect = 0;
 
-                    if($answer1 == "A"){
+                    if($answer1 == "B"){
                         $totalCorrect++;
                     }
                 ?>
         <p> </p>
         </li>
         <li> Your Answer: 
+                <?php
+                 $answer2 = $_POST['q2-answers'];
+                 echo "<p>$answer2</p>";
+
+                 if($answer2 == "A"){
+                     $totalCorrect++;
+                 }
+                ?>
         <p> </p>
         </li>
-        <li> Your Answer:  
+        <li> Your Answer:
+        <?php
+                 $answer3 = $_POST['q3-answers'];
+                 echo "<p>$answer3</p>";
+
+                 if($answer3 == "C"){
+                     $totalCorrect++;
+                 }
+                ?>  
         <p> </p>
         </li>
-        <li> Your Answer:  
-        <p> </p>
-        </li>
-        <li> Your Answer:  
+        <li> Your Answer:
+        <?php
+                 $answer4 = $_POST['q4-answers'];
+                 echo "<p>$answer4</p>";
+
+                 if($answer4 == "D"){
+                     $totalCorrect++;
+                 }
+                ?>   
         <p> </p>
         </li>
         <li> Your Answer: 
-        <p> </p>
-        </li>
-        <li> Your Answer:  
+        <?php
+                 $answer5 = $_POST['q5-answers'];
+                 echo "<p>$answer5</p>";
+
+                 if($answer5 == "B"){
+                     $totalCorrect++;
+                 }
+                ?>  
         <p> </p>
         </li>
         <li> Your Answer: 
-        <p> </p>
-        </li>
-        <li> Your Answer:  
+        <?php
+                 $answer6 = $_POST['q6-answers'];
+                 echo "<p>$answer6</p>";
+
+                 if($answer6 == "D"){
+                     $totalCorrect++;
+                 }
+                ?> 
         <p> </p>
         </li>
         <li> Your Answer: 
+        <?php
+                 $answer7 = $_POST['q7-answers'];
+                 echo "<p>$answer6</p>";
+
+                 if($answer7 == "C"){
+                     $totalCorrect++;
+                 }
+                ?>  
+        <p> </p>
+        </li>
+        <li> Your Answer:
+        <?php
+                 $answer8 = $_POST['q8-answers'];
+                 echo "<p>$answer8</p>";
+
+                 if($answer8 == "A"){
+                     $totalCorrect++;
+                 }
+                ?> 
+        <p> </p>
+        </li>
+        <li> Your Answer: 
+        <?php
+                 $answer9 = $_POST['q9-answers'];
+                 echo "<p>$answer9</p>";
+
+                 if($answer9 == "B"){
+                     $totalCorrect++;
+                 }
+                ?>  
+        <p> </p>
+        </li>
+        <li> Your Answer:
+        <?php
+                 $answer10 = $_POST['q10-answers'];
+                 echo "<p>$answer10</p>";
+
+                 if($answer10 == "D"){
+                     $totalCorrect++;
+                 }
+                ?>  
         <p> </p>
         </li>
     </ol>
