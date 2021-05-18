@@ -1,5 +1,5 @@
 <?php
-$db = new PDO ("mysql:dbname=quiz;host=localhost:3307", "root", "root");
+$db = new PDO ("mysql:dbname=quiz;host=localhost:3307", "root", "HatsuneMiku90");
 
     $answer = $db->query("SELECT * FROM quiz_answers WHERE is_correct = '1'");
 
@@ -19,8 +19,6 @@ $db = new PDO ("mysql:dbname=quiz;host=localhost:3307", "root", "root");
     <h2>Nawshin Rahman, Destiny Stribling, Nuran Ghoneim </h2>
 
     <hr />
-
-    <p> Score: </p>
     
     <ol>
         <li> Your Answer: 
@@ -32,6 +30,10 @@ $db = new PDO ("mysql:dbname=quiz;host=localhost:3307", "root", "root");
 
                     if($answer1 == "B"){
                         $totalCorrect++;
+                    } elseif ($answer1 == "A" || $answer1 == "C" || $answer1 == "D") {
+                        echo "Incorrect. The correct answer is: B( what are those????? ).";
+                    } else{
+                        echo " ";
                     }
                 ?>
         <p> </p>
@@ -43,6 +45,8 @@ $db = new PDO ("mysql:dbname=quiz;host=localhost:3307", "root", "root");
 
                  if($answer2 == "A"){
                      $totalCorrect++;
+                 } else{
+                     echo "Incorrect. The correct answer is: A(  Carry On ).";
                  }
                 ?>
         <p> </p>
@@ -54,6 +58,8 @@ $db = new PDO ("mysql:dbname=quiz;host=localhost:3307", "root", "root");
 
                  if($answer3 == "C"){
                      $totalCorrect++;
+                 } else{
+                     echo "Incorrect. The correct answer is: C(  Kim, there's people that are dying ).";
                  }
                 ?>  
         <p> </p>
@@ -65,6 +71,8 @@ $db = new PDO ("mysql:dbname=quiz;host=localhost:3307", "root", "root");
 
                  if($answer4 == "D"){
                      $totalCorrect++;
+                 } else{
+                     echo "Incorrect. The correct answer is: D( you crazy son of a bitch ).";
                  }
                 ?>   
         <p> </p>
@@ -76,6 +84,8 @@ $db = new PDO ("mysql:dbname=quiz;host=localhost:3307", "root", "root");
 
                  if($answer5 == "B"){
                      $totalCorrect++;
+                 } else{
+                     echo "Incorrect. The correct answer is: B ( 21 ).";
                  }
                 ?>  
         <p> </p>
@@ -87,6 +97,8 @@ $db = new PDO ("mysql:dbname=quiz;host=localhost:3307", "root", "root");
 
                  if($answer6 == "D"){
                      $totalCorrect++;
+                 } else{
+                     echo "Incorrect. The correct answer is: D ( I'm still a piece of garbage ).";
                  }
                 ?> 
         <p> </p>
@@ -98,6 +110,8 @@ $db = new PDO ("mysql:dbname=quiz;host=localhost:3307", "root", "root");
 
                  if($answer7 == "C"){
                      $totalCorrect++;
+                 } else{
+                     echo "Incorrect. The correct answer is: C ( they disappoint me ).";
                  }
                 ?>  
         <p> </p>
@@ -109,6 +123,8 @@ $db = new PDO ("mysql:dbname=quiz;host=localhost:3307", "root", "root");
 
                  if($answer8 == "A"){
                      $totalCorrect++;
+                 } else{
+                     echo "Incorrect. The correct answer is: A ( I'm honestly feeling so attacked right now ).";
                  }
                 ?> 
         <p> </p>
@@ -120,6 +136,8 @@ $db = new PDO ("mysql:dbname=quiz;host=localhost:3307", "root", "root");
 
                  if($answer9 == "B"){
                      $totalCorrect++;
+                 } else{
+                     echo "Incorrect. The correct answer is: B ( chickens ).";
                  }
                 ?>  
         <p> </p>
@@ -131,13 +149,15 @@ $db = new PDO ("mysql:dbname=quiz;host=localhost:3307", "root", "root");
 
                  if($answer10 == "D"){
                      $totalCorrect++;
+                 } else{
+                     echo "Incorrect. The correct answer is: D ( lemme take a selfie ).";
                  }
                 ?>  
         <p> </p>
         </li>
     </ol>
         <?php
-        echo "<div id='results'>$totalCorrect / 10 correct </p>";
+        echo "Score: <div id='results'>$totalCorrect / 10 correct </p>";
         ?>
 
     <form action= test.php >
