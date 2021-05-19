@@ -76,7 +76,90 @@
   
   .keepcalm {
       border-radius: 8px;
-      width: 150px;
+      width: 100px;
+      height: 100px;
       position: absolute;
+      right: 40em;
+      clear: bottom;
+  }
+  
+  .whatarethose {
+      border-radius: 8px;
+      width: 200px;
+      height: 100px;
+      position: absolute;
+      right: 40em;
+      clear: bottom;
+  }
+  
+  .earrings {
+      border-radius: 8px;
+      width: 200px;
+      height: 100px;
+      position: absolute;
+      right: 40em;
+      clear: bottom;
+  }
+  
+  .you {
+      border-radius: 8px;
+      width: 200px;
+      height: 100px;
+      position: absolute;
+      right: 40em;
+      clear: bottom;
+  }
+  
+  .plus {
+      border-radius: 8px;
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      right: 40em;
+      clear: bottom;
+  }
+  
+  .garbage {
+      border-radius: 8px;
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      right: 40em;
+      clear: bottom;
+  }
+  
+  .friends {
+      border-radius: 8px;
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      right: 40em;
+      clear: bottom;
+  }
+  
+  .attacked {
+      border-radius: 8px;
+      width: 150px;
+      height: 100px;
+      position: absolute;
+      right: 40em;
+      clear: bottom;
+  }
+  
+  .chickens {
+      border-radius: 8px;
+      width: 150px;
+      height: 100px;
+      position: absolute;
+      right: 40em;
+      clear: bottom;
+  }
+  
+  .will {
+      border-radius: 8px;
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      right: 40em;
       clear: bottom;
   }
