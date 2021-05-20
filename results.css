@@ -38,7 +38,7 @@ h2 {
 .headericon {
     float: left;
     position: absolute;
-    bottom: 37.9em;
+    bottom: 39.9em;
     overflow: hidden;
     width: 145pt;
     height: fixed;
@@ -48,7 +48,7 @@ h2 {
     float: right;
     position: absolute;
     right: 0em;
-    bottom: 37.9em;
+    bottom: 39.9em;
     overflow: hidden;
     width: 145pt;
     height: fixed;
@@ -70,14 +70,18 @@ h2 {
     border-style: double;
     border-color: #808080;
     border-width: 5px;
+    position: absolute;
+    left: 50%;
 }
 
 .correct {
     color: #50C878;
+    font-size: 14pt;
 }
 
 .incorrect {
     color: #D00000;
+    font-size: 14pt;
 }
 
 .score {
@@ -85,20 +89,20 @@ h2 {
     font-family: "Lucida Console", "Courier New", monospace;
 }
 
-.minion {
+.genie {
     border-radius: 8px;
-    width: 100px;
-    height: 100px;
+    width: 360px;
+    height: 300px;
     position: absolute;
-    right: 50em;
-    clear: bottom;
+    right: 2em;
+    bottom: 15em;
 }
 
 .king {
     border-radius: 8px;
-    width: 100px;
-    height: 100px;
+    width: 350px;
+    height: 300px;
     position: absolute;
-    right: 70em;
-    clear: bottom;
+    right: 2em;
+    bottom: 15em;
 }

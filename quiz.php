@@ -53,10 +53,6 @@ $question10opt2 = $db->query("SELECT content FROM quiz_answers WHERE id = 246803
 $question10opt3 = $db->query("SELECT content FROM quiz_answers WHERE id = 2468039"); 
 $question10opt4 = $db->query("SELECT content FROM quiz_answers WHERE id = 2468040"); 
 
-
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -489,7 +485,6 @@ $question10opt4 = $db->query("SELECT content FROM quiz_answers WHERE id = 246804
 </html>
 
 <?php
-    //var_dump($rows);
 
 ?>
 </body>
